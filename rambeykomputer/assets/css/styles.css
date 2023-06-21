@@ -1,0 +1,512 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+
+  --hue-color: 19; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+  /* HSL color mode */
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: #222;
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  /* --body-color :var(--background-color); */
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --background-color: #101e38;
+  --font-color: rgba(220, 179, 211, 255);
+  --box-shadow: #e5f1ff;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*========== Variables Dark theme ==========*/
+
+/*========== Button Dark/Light ==========*/
+
+/*==================== BASE ====================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  width: 100%;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: var(--text-color);
+}
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: var(--text-color);
+}
+h3 {
+  font-size: 30px;
+  line-height: 44px;
+  color: var(--text-color);
+}
+h4 {
+  font-size: 20px;
+  color: var(--text-color);
+}
+h5 {
+  font-size: 17px;
+  color: var(--text-color);
+}
+
+h6 {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.section-p1 {
+  padding: 40px 80px;
+}
+.section-m1 {
+  margin: 40px 0;
+}
+
+button.white {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: 0.2s;
+}
+
+button.white:hover {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+/* Header Start */
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: var(--background-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+}
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  margin-top: 20px;
+  position: relative;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(220, 179, 211, 255);
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: var(--first-color);
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: var(--first-color);
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+#hero {
+  background-image: url("../img/products/vga/ROG-STRIX-GeForce-RTX-4090-24-GB..png");
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 25% right 0;
+  padding: 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+#hero h4 {
+  padding-bottom: 15px;
+}
+#hero h1 {
+  color: var(--first-color);
+}
+#hero button {
+  background-image: url("../img/button.png");
+  background-color: transparent;
+  border: 0;
+  padding: 14px 80px 14px 65px;
+  background-repeat: no-repeat;
+  font-weight: 700;
+  color: var(--first-color);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+#hero button:hover {
+  background-image: #cce7d0;
+  color: #316b53;
+}
+#feature {
+  display: flex;
+  background-color: #101e38;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#feature .fe-box {
+  width: 180px;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+  border: 1px solid #cce7d0;
+  border-radius: 4px;
+  margin: 15px 0;
+  color: var(--text-color);
+  background-color: #fff;
+}
+#feature .fe-box:hover {
+  box-shadow: 10px 10px 54px --box-shadow;
+}
+#feature .fe-box h6 {
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  border-radius: 4px;
+  color: #088178;
+  background-color: #bcd8eb;
+}
+#feature .fe-box:nth-child(2) h6 {
+  background-color: #debceb;
+}
+#feature .fe-box:nth-child(3) h6 {
+  background-color: #bcebd9;
+}
+#feature .fe-box:nth-child(4) h6 {
+  background-color: #bccbeb;
+}
+#feature .fe-box:nth-child(5) h6 {
+  background-color: #edb1ff;
+}
+#feature .fe-box:nth-child(6) h6 {
+  background-color: #ffe0b1;
+}
+#feature .fe-box image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#feature h1 {
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #bcebd9;
+  padding: 40px 50px;
+  text-align: center;
+}
+
+/* products */
+#product1 {
+  text-align: center;
+}
+#product1 .pro-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+#product1 .pro {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #c2c2c2;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+}
+#product1 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+}
+#product1 .pro img {
+  width: 100%;
+  border-radius: 20px;
+}
+#product1 .pro .des {
+  text-align: start;
+  padding: 10px 0;
+}
+#product1 .pro .des span {
+  color: #606063;
+  font-size: 12px;
+}
+#product1 .pro .des h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+#product1 .pro .des i {
+  font-size: 12px;
+  color: rgb(243, 181, 25);
+}
+#product1 .pro .des h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(5, 105, 84);
+}
+#product1 .pro .cart {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 30px;
+  background-color: #d2f8de;
+  /* font-weight: 500; */
+  color: #217c52;
+  border: 1px solid #436849;
+  position: absolute;
+  /* top:330px;  */
+  bottom: 20px;
+  right: 20px;
+}
+
+#banner {
+  background-image: url("../img/banner/banner-category-gaming-pc-home-series.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+}
+#banner h4 {
+  color: #fff;
+  font-size: 16px;
+}
+
+#banner h2 {
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+#banner h2 span {
+  color: crimson;
+}
+
+#banner button:hover {
+  background: #088178;
+  color: #fff;
+}
+#sm-banner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#sm-banner .banner-box {
+  background-image: url("../img/banner/banner-head-2.png");
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* text-align: center; */
+  min-width: 580px;
+  /* width: 100%; */
+  height: 50vh;
+  background-size: cover;
+  color: #fff;
+  background-position: center;
+  padding: 30px;
+}
+#sm-banner .banner-box h4 {
+  color: #fff;
+}
+#sm-banner .banner-box h2 {
+  color: #fff;
+  font-weight: bold;
+}
+
+#brand-box {
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #c2c2c2;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 80px;
+}
+
+#brand-box .brands {
+  justify-content: space-between;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+#brand-box .brands img {
+  width: 100px;
+}
+#brand-box h4 {
+  background-color: #101e38;
+  /* color: #bccbeb; */
+  font-weight: 700;
+  display: inline-block;
+  color: #fff !important;
+  padding: 1rem 3rem 1rem 1rem;
+  position: relative;
+  left: -13px;
+  top: -11px;
+  font-weight: 700 !important;
+  border-radius: 25px 0 25px;
+}
+.footer_one {
+  
+  padding: 80px;
+  background-color: #101e38;
+  padding-top: 70px;
+}
+.footer_one .row {
+  justify-content: space-between;
+}
+.footer_one .div {
+  position: relative;
+  padding: 5px;
+}
+.footer_one .div p {
+  color: #969696;
+  font-size: 13px;
+  line-height: 30px;
+  margin-bottom: 0;
+}
+
+.footer_one .div h4 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.footer_one .div li a {
+  color: #9e9e9e;
+  font-size: 13px;
+  line-height: 30px;
+
+  transition: all 0.3s ease 0s;
+}
+
+.footer_one .div li:hover a {
+  color: #fff;
+  padding-left: 10px;
+}
+
+.footer_one .kurir img {
+  width: 100px;
+  padding:5px;
+}
+.footer_one .kurir {
+  min-width: 250px;
+  cursor: pointer;
+  
+}

@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+
+  --hue-color: 19; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+  /* HSL color mode */
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: #222;
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --background-color: #101e38;
+  --font-color:rgba(220,179,211,255);
+  --box-shadow: #E5F1FF;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+*{
+  font-family: "Spartan", sans-serif;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  width: 100%;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background: var(--background-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+
+  }
+  #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #navbar li {
+    list-style: none;
+    padding: 0 20px;
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(220, 179, 211, 255);
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.active {
+    color: var(--first-color);
+  }
+  
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: var(--first-color);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+  }
+
+#product1{
+    text-align: center;
+}
+
+#product1 .pro-container{
+    display: flex;
+    flex: 1;
+    padding-top: 20px;
+	  padding-left: 300px;
+    padding-right: 30px;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+#product1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #c2c2c2;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+	
+}
+
+#product1 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+#product1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product1 .pro .des{
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .des span{
+color: #606063;
+font-size: 12px;
+}
+
+#product1 .pro .des h5{
+padding-top: 7px;
+    color: #1a1a1a;
+font-size: 14px;
+}
+
+#product1 .pro .des i{
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+
+#product1 .pro .des h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(5, 105, 84);
+}
+
+#product1 .pro .cart{
+    width: 40px; 
+    height: 40px;
+    line-height: 40px;
+    border-radius: 30px;
+    background-color: #d2f8de;
+    /* font-weight: 500; */
+    color: #217c52;
+    border: 1px solid #436849;
+    position: absolute;
+    /* top:330px;  */
+    bottom:20px;
+    right: 20px;
+}
+
+.filter {
+    width: 13%;
+    min-width: 250px;
+    height: 300px;
+    padding: 10px 12px;
+    border: 1px solid #c2c2c2;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin-top: 2rem;
+    transition: 0.2s ease;
+    position: fixed;
+    background-color: #141F39;
+    top: 120px;
+}
+
+.filter label {
+    color: #BDA3C4;
+  }
+
+.filter label:hover {
+    color: #CC8318;
+}
+
+
+.barang-kosong {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 35rem;
+}
+
+.barang-kosong img {
+    width: 400px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+

@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+
+  --hue-color: 19; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+  /* HSL color mode */
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: #222;
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --background-color: #101e38;
+  --font-color:rgba(220,179,211,255);
+  --box-shadow: #E5F1FF;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+*{
+  margin-top: 0;
+  margin-left: 0;
+  font-family: "Spartan", sans-serif;
+
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  width: 100%;
+}
+
+
+/* NAVBAR */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: var(--background-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  padding-bottom: 0.25rem;
+}
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  margin-top: 20px;
+  position: relative;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(220, 179, 211, 255);
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: var(--first-color);
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: var(--first-color);
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+
+/* PUNYA AAN */
+/* PUNYA AAN */
+/* PUNYA AAN */
+/* PUNYA AAN */
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+.select-all {
+display: flex;
+align-items: center;
+border-bottom: 1px solid #ccc;
+padding-bottom: 5px;
+margin-bottom: 10px;
+border-width : 5px;
+border-radius : 1px;
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2rem;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+    padding-right: 250px;
+    padding-left: 1px;
+}
+
+.promo{
+  align-self: center;
+}
+.right-side {
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  padding-left: 1px;
+  border: 6px solid #5B5B5B;
+  padding: 50px;
+  border-radius: 7px;
+  /* padding-right: 10px; */
+  margin-right : 1px;
+  margin: 30px ;
+}
+
+
+.promo-button {
+  /* padding: 10px; */
+  background-color: #fff;
+  color: #141F39;
+  border: 3px solid black;
+  border-radius: 7px;
+  cursor: pointer;
+  /* margin-left: 40px; */
+  width: 300px;
+  height: 30px;
+  font-family: 'Exo 2', sans-serif; /* Menggunakan font Exo 2 atau font sans-serif jika Exo 2 tidak tersedia */
+  font-weight: 600; /* Mengatur ketebalan font menjadi semibold */
+  font-size: 16px; /* Mengatur ukuran font */
+  /* padding: 10px 20px; */
+  border-radius: 5px;
+  line-height: 0.5;   
+}
+
+.buy-button {
+  padding: 10px;
+  align-self: center;
+  background-color: #141F39;
+  color: #CC8318;
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+  
+.order-summary{
+  border-top: solid #ccc;
+  padding-top: 5px;
+  margin-top: 35.5px;
+  border-width : 5px;
+  border-radius : 1px;
+  /* font */
+  font-family: 'Exo 2', sans-serif;
+}
+
+.subtotal{
+  font-family: 'Exo 2', sans-serif;
+  color: #5B5B5B;
+  font-size: 15px;
+}
+
+.tulisan-subtotal{
+  white-space: pre;
+}
+
+.total-price {
+  border-top: solid #ccc;
+  padding-top: 10px;
+  margin-top: 20px;
+  border-width : 5px;
+  /* font */
+  font-family: 'Exo 2', sans-serif;
+  font-size: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.store-name {
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-left: -90px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.product-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #888;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.quantity-text {
+  margin-right: 10px;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.quantity-button {
+  padding: 5px 8px;
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.quantity-value {
+  margin: 0 10px;
+}
+
+.fa-trash-alt {
+  color: #888;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.buy-button{
+  margin-top: 4rem;
+}
+
+.jumlah-barang{
+  width: 3rem;
+  text-align: center;
+}
+
+.keranjang-kosong{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 18rem;
+  margin-top: 5rem;
+}
+
+ul {
+  display: flex;
+  flex: 1;
+}
+
+.ada{
+  display: flex;
+  flex: 1;
+  gap: 30rem;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.kiri{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+
+.rincian{
+  display: flex;
+  flex-direction: column;
+}
